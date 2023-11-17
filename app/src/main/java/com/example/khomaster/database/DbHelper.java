@@ -21,7 +21,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Bảng Thủ Kho
         String Thukho = "Create table ThuKho("+
-                "MaTK text primary key," +
+                "MaTK Integer primary key autoincrement," +
                 "HoTen text not null," +
                 "MatKhau text not null," +
                 "Email text not null," +
@@ -95,6 +95,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaKH Integer references KhachHang(MaKH)," +
                 "MaTK text references ThuKho(MaTK))";
         sqLiteDatabase.execSQL(Phieuxuatkho);
+
+        sqLiteDatabase.execSQL("INSERT INTO ThuKho VALUES(1, 'Thukho01', '123456', 'abc@gmail.com', '1900 1900'), (2, 'Thukho02', '123456', 'abcd@gmail.com', '19008 19008')");
     }
 
     @Override
