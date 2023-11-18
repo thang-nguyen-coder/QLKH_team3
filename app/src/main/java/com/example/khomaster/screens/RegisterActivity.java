@@ -84,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
                 if (!isValidPhoneNumber(number)) {
-                    Toast.makeText(RegisterActivity.this, "Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Số điện thoại phải có từ 10 đến 12 số", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (!pass.trim().equals(nlpass)){
@@ -122,7 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
     // Hàm kiểm tra định dạng số điện thoại
     private boolean isValidPhoneNumber(String phoneNumber) {
         // Biểu thức chính quy đơn giản cho số điện thoại (số từ 10 đến 12 chữ số)
-        String phoneRegex = "^0[0-9]{10,12}$";
+        String phoneRegex = "^0[0-9]{9,11}$";
         return phoneNumber.matches(phoneRegex);
     }
 
