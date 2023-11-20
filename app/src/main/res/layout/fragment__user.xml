@@ -332,7 +332,7 @@
                             android:layout_marginHorizontal="10dp"
                             android:gravity="center"
                             android:textStyle="bold"
-                            android:textSize="20sp"
+                            android:textSize="15sp"
                             android:text="Sổ quỹ"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"/>
@@ -355,7 +355,7 @@
                             android:layout_marginHorizontal="10dp"
                             android:gravity="center"
                             android:textStyle="bold"
-                            android:textSize="20sp"
+                            android:textSize="15sp"
                             android:text="Báo cáo"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"/>
