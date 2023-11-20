@@ -41,24 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString();
                 String number = edtNumber.getText().toString();
 
-//                if (name.isEmpty() || pass.isEmpty() || nlpass.isEmpty() || email.isEmpty() || number.isEmpty()){
-//                    if (name.trim().equals("")){
-//                        Toast.makeText(RegisterActivity.this, "Vui lòng không dể trống Họ tên", Toast.LENGTH_SHORT).show();
-//                    } else if (pass.trim().equals("")) {
-//                        Toast.makeText(RegisterActivity.this, "Vui lòng không để trống Mật khẩu", Toast.LENGTH_SHORT).show();
-//                    } else if (nlpass.trim().equals("")) {
-//                        Toast.makeText(RegisterActivity.this, "Vui lòng không để Nhập lại mật khẩu trống", Toast.LENGTH_SHORT).show();
-//                    } else if (!pass.equals(nlpass)) {
-//                        Toast.makeText(RegisterActivity.this, "Nhập 2 mật khẩu không giống nhau. Vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show();
-//                    } else if (email.trim().equals("")) {
-//                        Toast.makeText(RegisterActivity.this, "Vui lòng không để Email trống", Toast.LENGTH_SHORT).show();
-//                    } else if (number.trim().equals("")) {
-//                        Toast.makeText(RegisterActivity.this, "Vui lòng không để Số điện thoại trống", Toast.LENGTH_SHORT).show();
-//                    }else {
-//
-//                    }
-//                }
-
                 if (name.trim().equals("")){
                     Toast.makeText(RegisterActivity.this, "Vui lòng không để trống Họ và tên", Toast.LENGTH_SHORT).show();
                     return;
