@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEFF4"
-    tools:context=".fragment.Fragment_User">
+    tools:context=".fragment.Fragment__user"
+    android:background="#ECEFF4">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

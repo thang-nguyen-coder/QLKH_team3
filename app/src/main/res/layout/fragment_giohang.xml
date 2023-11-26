@@ -3,13 +3,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.Fragment_giohang">
 
-    <TextView
+    <LinearLayout
+        android:background="#ECEFF4"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Giỏ hàng" />
-<androidx.appcompat.widget.SearchView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="32sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hàng hóa" />
+
+            <ImageView
+                android:layout_gravity="end"
+                android:id="@+id/imgSreachHangHoa"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:onClick="onFindItem"
+                android:src="@drawable/ic_sreach" />
+
+            <EditText
+                android:id="@+id/edtSreachHangHoa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập từ khóa tìm kiếm"
+                android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:padding="10dp"
+                android:background="@drawable/custom_linear_rcy"
+                android:layout_width="match_parent"
+                android:layout_height="580dp"/>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:backgroundTint="#7FDAF4"
+                app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.FloatingActionButton"
+                android:src="@drawable/ic_floatbtn_add"
+                android:layout_gravity="right"
+                android:scaleType="centerInside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </FrameLayout>
