@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -34,13 +35,16 @@ public class Layout extends AppCompatActivity {
 //        bottomNav.setItemIconTintList(defaultColor);
 //        bottomNav.setItemTextColor(defaultColor);
 
-        // Sự kiện được chọn mặc định
-        bottomNav.setSelectedItemId(R.id.thongke);
 
+        bottomNav.setSelectedItemId(R.id.thongke);
+        Fragment_thongke frg = new Fragment_thongke();
+        relaceFrg(frg);
+
+        
         bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
+                Fragment fragment = new Fragment();
                 if (item.getItemId() == R.id.thongke){
                     fragment = new Fragment_thongke();
                 } else if (item.getItemId() == R.id.hoadon) {
@@ -88,5 +92,9 @@ public class Layout extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    public void relaceFrg(Fragment frg){
+        FragmentManager fg = getSupportFragmentManager();
+        fg.beginTransaction().replace(R.id.frameLayout,frg).commit();
     }
 }
