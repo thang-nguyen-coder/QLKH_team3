@@ -13,6 +13,9 @@
         android:theme="@style/Theme.KhoMaster"
         tools:targetApi="31">
         <activity
+            android:name=".screens.EditUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".Layout"
             android:exported="false" />
         <activity

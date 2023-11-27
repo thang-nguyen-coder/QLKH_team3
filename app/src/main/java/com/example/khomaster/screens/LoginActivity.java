@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edtUser, edtPass;
 
-    ThuKhoDAO thuKhoDAO = new ThuKhoDAO(this);
+    ThuKhoDAO thuKhoDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         edtPass = findViewById(R.id.edtPass);
         Button btnLogin = findViewById(R.id.btnLogin);
         TextView tvRegister = findViewById(R.id.tvRegister);
-
+        thuKhoDAO = new ThuKhoDAO(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,25 +49,21 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(){
         String user = edtUser.getText().toString();
-        String pass = edtPass.getText().toString();
+        String passwd = edtPass.getText().toString();
 
-        if (user.isEmpty() || pass.isEmpty()){
-            if (user.equals("")){
-                Toast.makeText(this, "Vui lòng không để trống Tài khoản", Toast.LENGTH_SHORT).show();
-            } else if (pass.equals("")) {
-                Toast.makeText(this, "Vui lòng không để trống Mật khẩu", Toast.LENGTH_SHORT).show();
-            }else {
+        if (user.equals("") && passwd.equals("")) {
+            Toast.makeText(this, "Chưa nhập tên đăng nhập hoặc mật khẩu", Toast.LENGTH_SHORT).show();
 
-            }
-        }else {
-            if (thuKhoDAO.checkLogin(user, pass)){
-                Toast.makeText(this, "Login thành công!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, Layout.class);
-                intent.putExtra("MaTK", user);
-                startActivity(intent);
-                finish();
-            }else {
-                Toast.makeText(this, "Tài khoản hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+        } else if (user.equals("")) {
+            Toast.makeText(this, "Chưa nhập tên đăng nhập", Toast.LENGTH_SHORT).show();
+        } else if (passwd.equals("")) {
+            Toast.makeText(this, "Chưa nhập mật khẩu", Toast.LENGTH_SHORT).show();
+        } else {
+            boolean check = thuKhoDAO.checkLogin(user, passwd);
+            if (check) {
+                startActivity(new Intent(this, Layout.class));
+            } else {
+                Toast.makeText(this, "Tên đăng nhập hoặc mật khẩu sai", Toast.LENGTH_SHORT).show();
             }
         }
     }

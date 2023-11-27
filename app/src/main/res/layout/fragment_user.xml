@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Fragment__user"
+    tools:context=".fragment.Fragment_user"
     android:background="#ECEFF4">
     <ScrollView
         android:layout_width="match_parent"
@@ -26,11 +26,12 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"/>
                 <LinearLayout
+                    android:layout_marginVertical="17dp"
+                    android:layout_weight="1"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <TextView
-                        android:layout_marginTop="23dp"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:text="User"
@@ -43,6 +44,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
+                <ImageView
+                    android:id="@+id/itemEditUser"
+                    android:layout_marginVertical="17dp"
+                    android:layout_marginHorizontal="22dp"
+                    android:src="@drawable/img_options"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
             </LinearLayout>
             <!--        body-->
             <LinearLayout
@@ -523,6 +531,7 @@
                         android:layout_height="1dp"
                         android:background="#D9D9D9" />
                     <LinearLayout
+                        android:id="@+id/itemLogout"
                         android:padding="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

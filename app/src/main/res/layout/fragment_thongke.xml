@@ -136,7 +136,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="14dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginVertical="20dp"
                 android:layout_marginLeft="21dp"/>
 
         </LinearLayout>

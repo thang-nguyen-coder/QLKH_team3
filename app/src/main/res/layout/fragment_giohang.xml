@@ -42,14 +42,13 @@
                 android:visibility="gone" />
         </LinearLayout>
         <LinearLayout
-            android:background="@color/white"
+            android:background="@drawable/custom_linear_rcy"
             android:layout_marginHorizontal="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <androidx.recyclerview.widget.RecyclerView
                 android:padding="10dp"
-                android:background="@drawable/custom_linear_rcy"
                 android:layout_width="match_parent"
                 android:layout_height="580dp"/>
             <com.google.android.material.floatingactionbutton.FloatingActionButton
