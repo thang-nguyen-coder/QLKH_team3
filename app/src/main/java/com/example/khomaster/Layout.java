@@ -6,12 +6,11 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.khomaster.fragment.Fragment_User;
-import com.example.khomaster.fragment.Fragment_giohang;
+import com.example.khomaster.fragment.Fragment_hanghoa;
 import com.example.khomaster.fragment.Fragment_hoadon;
 import com.example.khomaster.fragment.Fragment_thongbao;
 import com.example.khomaster.fragment.Fragment_thongke;
@@ -50,7 +49,7 @@ public class Layout extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.hoadon) {
                     fragment = new Fragment_hoadon();
                 } else if (item.getItemId() == R.id.giohang) {
-                    fragment = new Fragment_giohang();
+                    fragment = new Fragment_hanghoa();
                 } else if (item.getItemId() == R.id.thongbao) {
                     fragment = new Fragment_thongbao();
                 }else if (item.getItemId() == R.id.user) {

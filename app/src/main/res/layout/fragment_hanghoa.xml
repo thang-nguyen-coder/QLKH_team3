@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.Fragment_giohang">
+    tools:context=".fragment.Fragment_hanghoa">
 
     <LinearLayout
         android:background="#ECEFF4"
@@ -41,25 +41,37 @@
                 android:hint="Nhập từ khóa tìm kiếm"
                 android:visibility="gone" />
         </LinearLayout>
-        <LinearLayout
-            android:background="@drawable/custom_linear_rcy"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_marginHorizontal="10dp"
-            android:orientation="vertical"
+            android:background="@drawable/custom_linear_rcy"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.recyclerview.widget.RecyclerView
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="580dp"/>
+                android:id="@+id/rcyHangHoa"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnAddLoaiSP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="10dp"/>
+
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAddLoaiSP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#7FDAF4"
-                app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.FloatingActionButton"
                 android:src="@drawable/ic_floatbtn_add"
                 android:layout_gravity="right"
                 android:scaleType="centerInside"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </LinearLayout>
 </FrameLayout>

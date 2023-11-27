@@ -20,7 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Bảng Thủ Kho
-        String Thukho = "Create table ThuKho("+
+        String Thukho = "Create table ThuKho(" +
                 "MaTK Integer primary key autoincrement," +
                 "HoTen text not null," +
                 "MatKhau text not null," +
@@ -50,7 +50,8 @@ public class DbHelper extends SQLiteOpenHelper {
         String Loaisanpham = "Create table LoaiSanPham(" +
                 "Maloai Integer primary key autoincrement," +
                 "MaNCC Integer references NhaCungCap(MaNCC)," +
-                "Tenloaisp text not null)";
+                "Tenloaisp text not null, " +
+                "imgLSP text not null)";
         sqLiteDatabase.execSQL(Loaisanpham);
 
         //Bảng Sản phẩm
@@ -61,9 +62,9 @@ public class DbHelper extends SQLiteOpenHelper {
                 "Soluukho Integer not null," +
                 "Gia Integer not null," +
                 "Maloai Integer references LoaiSanPham(Maloai)," +
-                "Ngaynhap Integer not null," +
-                "Ngayxuat Integer not null," +
-                "MaNCC Integer references NhaCungCap(MaNCC))";
+                "Ngaynhap text not null," +
+                "MaNCC Integer references NhaCungCap(MaNCC), " +
+                "imgSP text not null)";
         sqLiteDatabase.execSQL(Sanpham);
 
         //Bảng Phiếu nhập kho
@@ -95,13 +96,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "MaKH Integer references KhachHang(MaKH)," +
                 "MaTK text references ThuKho(MaTK))";
         sqLiteDatabase.execSQL(Phieuxuatkho);
-
+        //data mẫu bảng thủ kho
         sqLiteDatabase.execSQL("INSERT INTO ThuKho VALUES(1, 'Thukho01', '123456', 'abc@gmail.com', '1900 1900'), (2, 'Thukho02', '123456', 'abcd@gmail.com', '19008 19008')");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        if (i != i1){
+        if (i != i1) {
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS ThuKho");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS KhachHang");
             sqLiteDatabase.execSQL("DROP TABLE IF EXISTS NhaCungCap");
