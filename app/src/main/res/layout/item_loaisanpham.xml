@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemLoaiSP"
+    android:layout_margin="5dp"
     app:cardCornerRadius="14dp">
     <LinearLayout
         android:padding="10dp"
@@ -21,6 +23,5 @@
             android:text="Quần áo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>

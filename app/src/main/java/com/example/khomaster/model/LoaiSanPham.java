@@ -3,7 +3,8 @@ package com.example.khomaster.model;
 public class LoaiSanPham {
     private int Maloai;
     private int MaNCC;
-    private String Tenloaisp, imgLSP;
+    private String Tenloaisp;
+    private String imgLSP;
 
     public LoaiSanPham(int maloai, int maNCC, String tenloaisp, String imgLSP) {
         Maloai = maloai;
@@ -11,6 +12,7 @@ public class LoaiSanPham {
         Tenloaisp = tenloaisp;
         this.imgLSP = imgLSP;
     }
+
 
     public int getMaloai() {
         return Maloai;
